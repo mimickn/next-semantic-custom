@@ -1,6 +1,8 @@
 const withCSS = require('@zeit/next-css')
+const path = require('path')
+const withLess = require('@zeit/next-less')
 
-module.exports = withCSS({
+module.exports = withLess(withCSS({
   target: 'serverless',
   webpack (config) {
     config.module.rules.push({
@@ -15,6 +17,10 @@ module.exports = withCSS({
         }
       }
     })
+
+    config.resolve.alias['../../theme.config$'] = path.join(__dirname, '/src/semantic-ui/theme.config')
+
     return config
   }
 })
+)

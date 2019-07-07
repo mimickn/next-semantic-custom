@@ -2,9 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
+import 'semantic-ui-css/semantic.min.css'
+import { Button } from 'semantic-ui-react'
 
 const Home = () => (
   <div>
+    <Button primary>TEST</Button>
     <Head title="Home" />
     <Nav />
 
